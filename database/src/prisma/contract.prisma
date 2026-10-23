@@ -1,0 +1,42 @@
+// use prisma-next
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  passwordHash  String
+
+  githubAccount GithubAccount?
+
+  createdAt TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+}
+
+model GithubAccount {
+  id             Int      @id @default(autoincrement())
+  githubUsername String
+  encryptedToken String
+
+  userId         Int      @unique
+  user           User     @relation(fields: [userId], references: [id])
+
+  repositories   Repository[]
+
+  createdAt      TimestamptzString @default(now())
+  updatedAt      temporal.updatedAtString()
+}
+
+model Repository {
+  id Int @id @default(autoincrement())
+  githubRepoId Int
+  repoName String
+  fullName String
+
+  githubAccountId Int
+  githubAccount GithubAccount @relation(fields: [githubAccountId] , references : [id])
+
+  createdAt TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+
+  @@unique([githubAccountId , githubRepoId])
+}

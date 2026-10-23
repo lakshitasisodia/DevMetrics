@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /index.html
+Allow: /register.html
+Disallow: /connect.html
+Disallow: /repositories.html
+Disallow: /dashboard.html
+Disallow: /repo.html

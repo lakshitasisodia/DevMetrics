@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Log in — DevMetrics</title>
+    <meta name="description" content="Log in to DevMetrics to track commit activity, pull request velocity, review turnaround, and issue health for your GitHub repositories." />
+    <link rel="canonical" href="https://your-devmetrics-domain.example/index.html" />
+    <meta name="robots" content="noindex, follow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="DevMetrics — GitHub engineering analytics" />
+    <meta property="og:description" content="Commit, pull request, review, and issue metrics for your GitHub repositories, in one dashboard." />
+    <meta property="og:site_name" content="DevMetrics" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="DevMetrics — GitHub engineering analytics" />
+    <meta name="twitter:description" content="Commit, pull request, review, and issue metrics for your GitHub repositories, in one dashboard." />
+
+    <link rel="stylesheet" href="/src/css/main.css" />
+  </head>
+  <body>
+    <main class="min-h-screen flex">
+      <!-- Brand panel -->
+      <section class="hidden lg:flex lg:w-1/2 flex-col justify-between p-12 border-r border-[var(--color-border)] relative overflow-hidden">
+        <div class="absolute inset-0 opacity-[0.07] pointer-events-none" aria-hidden="true"
+          style="background-image: radial-gradient(var(--color-brand) 1px, transparent 1px); background-size: 22px 22px;"></div>
+
+        <a href="/index.html" class="flex items-center gap-2 relative">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="2.2" stroke-linecap="round">
+            <path d="M4 19V6M12 19V4M20 19v-9" />
+          </svg>
+          <span class="font-semibold tracking-tight">DevMetrics</span>
+        </a>
+
+        <div class="relative max-w-md">
+          <h1 class="text-3xl font-bold tracking-tight leading-tight text-[var(--color-ink)]">
+            Every repository tells a story in commits, reviews, and cycle time.
+          </h1>
+          <p class="mt-4 text-[var(--color-ink-dim)] leading-relaxed">
+            Connect a GitHub account, pick the repositories you care about, and DevMetrics turns raw activity into
+            commit velocity, PR cycle time, review turnaround, and issue health you can actually act on.
+          </p>
+        </div>
+
+        <div class="relative flex items-center gap-6 mono-num text-xs text-[var(--color-ink-faint)]">
+          <span>COMMITS</span>
+          <span class="w-1 h-1 rounded-full bg-[var(--color-ink-faint)]"></span>
+          <span>PULL REQUESTS</span>
+          <span class="w-1 h-1 rounded-full bg-[var(--color-ink-faint)]"></span>
+          <span>REVIEWS</span>
+          <span class="w-1 h-1 rounded-full bg-[var(--color-ink-faint)]"></span>
+          <span>ISSUES</span>
+        </div>
+      </section>
+
+      <!-- Form panel -->
+      <section class="flex-1 flex items-center justify-center p-6 sm:p-10">
+        <div class="w-full max-w-sm">
+          <div class="lg:hidden flex items-center gap-2 mb-10">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="2.2" stroke-linecap="round">
+              <path d="M4 19V6M12 19V4M20 19v-9" />
+            </svg>
+            <span class="font-semibold tracking-tight">DevMetrics</span>
+          </div>
+
+          <h2 class="text-xl font-semibold text-[var(--color-ink)]">Log in</h2>
+          <p class="mt-1.5 text-sm text-[var(--color-ink-dim)]">
+            New here? <a href="/register.html" class="text-[var(--color-brand)] hover:underline font-medium">Create an account</a>
+          </p>
+
+          <form id="login-form" class="mt-7 space-y-4" novalidate>
+            <div>
+              <label class="field-label" for="email">Email</label>
+              <input class="field-input" type="email" id="email" name="email" autocomplete="email" required placeholder="you@company.com" />
+              <p class="field-error hidden" id="email-error"></p>
+            </div>
+            <div>
+              <label class="field-label" for="password">Password</label>
+              <input class="field-input" type="password" id="password" name="password" autocomplete="current-password" required placeholder="••••••••" />
+              <p class="field-error hidden" id="password-error"></p>
+            </div>
+
+            <p class="field-error hidden" id="form-error" role="alert"></p>
+
+            <button type="submit" id="submit-btn" class="btn btn-primary w-full">
+              <span id="submit-label">Log in</span>
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/js/pages/login.js"></script>
+  </body>
+</html>

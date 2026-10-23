@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Dashboard — DevMetrics</title>
+    <meta name="description" content="Your tracked GitHub repositories and their engineering metrics at a glance." />
+    <link rel="canonical" href="https://your-devmetrics-domain.example/dashboard.html" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="stylesheet" href="/src/css/main.css" />
+  </head>
+  <body>
+    <div id="app-navbar"></div>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
+      <header class="mb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+        <div>
+          <h1 class="text-2xl font-bold tracking-tight text-[var(--color-ink)]">Dashboard</h1>
+          <p class="mt-1.5 text-[var(--color-ink-dim)]">Engineering metrics for the repositories you track.</p>
+        </div>
+        <a href="/repositories.html" class="btn btn-primary shrink-0">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          Add repository
+        </a>
+      </header>
+
+      <div id="dashboard-content"></div>
+    </main>
+
+    <script type="module" src="/src/js/pages/dashboard.js"></script>
+  </body>
+</html>

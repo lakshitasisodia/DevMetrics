@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Connect GitHub — DevMetrics</title>
+    <meta name="description" content="Connect your GitHub account to DevMetrics with a personal access token to start measuring your repositories." />
+    <link rel="canonical" href="https://your-devmetrics-domain.example/connect.html" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="stylesheet" href="/src/css/main.css" />
+  </head>
+  <body>
+    <div id="app-navbar"></div>
+
+    <main class="max-w-2xl mx-auto px-4 sm:px-6 py-12">
+      <header class="mb-8">
+        <p class="text-xs font-semibold tracking-wide text-[var(--color-brand)] mono-num">STEP 1 OF 2</p>
+        <h1 class="mt-2 text-2xl font-bold tracking-tight text-[var(--color-ink)]">Connect your GitHub account</h1>
+        <p class="mt-2 text-[var(--color-ink-dim)] leading-relaxed">
+          DevMetrics needs a GitHub personal access token to read repository activity on your behalf. The token is
+          encrypted before it's stored, and only used server-side to call the GitHub API.
+        </p>
+      </header>
+
+      <div class="card p-6 sm:p-7">
+        <form id="connect-form" class="space-y-5" novalidate>
+          <div>
+            <label class="field-label" for="githubUsername">GitHub username</label>
+            <input class="field-input" type="text" id="githubUsername" name="githubUsername" autocomplete="username" required placeholder="octocat" />
+            <p class="field-error hidden" id="githubUsername-error"></p>
+          </div>
+
+          <div>
+            <label class="field-label" for="githubToken">Personal access token</label>
+            <input class="field-input" type="password" id="githubToken" name="githubToken" autocomplete="off" required placeholder="ghp_••••••••••••••••••••••••" />
+            <p class="field-hint">
+              Needs <code class="mono-num text-[var(--color-ink-dim)]">repo</code> scope to read private repository data.
+              <a class="text-[var(--color-brand)] hover:underline" href="https://github.com/settings/tokens/new" target="_blank" rel="noopener noreferrer">Create a token on GitHub ↗</a>
+            </p>
+            <p class="field-error hidden" id="githubToken-error"></p>
+          </div>
+
+          <p class="field-error hidden" id="form-error" role="alert"></p>
+
+          <div class="flex items-center gap-3">
+            <button type="submit" id="submit-btn" class="btn btn-primary">
+              <span id="submit-label">Connect account</span>
+            </button>
+            <a href="/dashboard.html" class="text-sm text-[var(--color-ink-dim)] hover:text-[var(--color-ink)]">Skip for now</a>
+          </div>
+        </form>
+      </div>
+
+      <p class="mt-5 text-xs text-[var(--color-ink-faint)] leading-relaxed">
+        Your token is encrypted with AES-256-GCM before it touches the database and is only decrypted in memory when
+        DevMetrics makes a request to the GitHub API on your behalf.
+      </p>
+    </main>
+
+    <script type="module" src="/src/js/pages/connect.js"></script>
+  </body>
+</html>

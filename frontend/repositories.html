@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Repositories — DevMetrics</title>
+    <meta name="description" content="Choose which GitHub repositories DevMetrics should track and measure." />
+    <link rel="canonical" href="https://your-devmetrics-domain.example/repositories.html" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="stylesheet" href="/src/css/main.css" />
+  </head>
+  <body>
+    <div id="app-navbar"></div>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+      <header class="mb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+        <div>
+          <h1 class="text-2xl font-bold tracking-tight text-[var(--color-ink)]">Repositories</h1>
+          <p class="mt-1.5 text-[var(--color-ink-dim)]">
+            Select the repositories you want DevMetrics to track. Tracked repositories appear on your dashboard.
+          </p>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+          <div class="relative">
+            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--color-ink-faint)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="search" id="repo-search" placeholder="Filter repositories…" class="field-input !pl-9 w-56" />
+          </div>
+        </div>
+      </header>
+
+      <section aria-labelledby="tracked-heading" class="mb-10">
+        <h2 id="tracked-heading" class="text-sm font-semibold text-[var(--color-ink-dim)] uppercase tracking-wide mb-3">Tracked</h2>
+        <div id="tracked-list"></div>
+      </section>
+
+      <section aria-labelledby="available-heading">
+        <div class="flex items-center justify-between mb-3">
+          <h2 id="available-heading" class="text-sm font-semibold text-[var(--color-ink-dim)] uppercase tracking-wide">Available on GitHub</h2>
+        </div>
+        <div id="available-list"></div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/js/pages/repositories.js"></script>
+  </body>
+</html>

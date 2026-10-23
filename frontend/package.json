@@ -1,0 +1,22 @@
+{
+  "name": "devmetrics-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "DevMetrics frontend — dashboard for GitHub engineering metrics.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "autoprefixer": "^10.6.0",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.6"
+  }
+}
